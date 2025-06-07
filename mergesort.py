@@ -62,3 +62,4 @@ if __name__ == "__main__":
     plt.ylabel("my numbers")
     plt.title("sortierte Zahlen vs index")
     plt.show()
+

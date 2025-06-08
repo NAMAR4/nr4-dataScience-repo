@@ -1,4 +1,4 @@
-
+import sys
 
 def finding(arr) -> int: 
     numbers = {}
@@ -16,3 +16,10 @@ def finding(arr) -> int:
             lone_elem = elem
 
     return lone_elem
+
+
+if __name__ == "__main__":
+
+    input_numbers = [int(x) for x in sys.argv[1:]]
+    result = finding(input_numbers)
+    print(result)

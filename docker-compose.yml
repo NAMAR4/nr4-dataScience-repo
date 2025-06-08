@@ -1,0 +1,18 @@
+
+services:
+
+  run_finding_test:     # test datei laufen lassen
+    build: .            # baue dockerfile aus dem aktuellen verzeichnis
+    image: python_lib_image   # name, die das image haben soll (gleich, da beide services auf das selbe Dockerfile und daten zugreift)
+    command: pytest
+    volumes:            # aktuelles verzeichnis wird unter app gemounted
+      - .:/app
+    working_dir: /app   # arbeitsverzeichnis wir auf app gesetzt (damit pytest im aktuellen Verzeichnis arbeiten kann)
+
+  run_finding:
+    build: .
+    image: python_lib_image
+    entrypoint: python finding.py     # damit man finding.py mit argumenten aufrufen kann
+    volumes:
+      - .:/app
+    working_dir: /app
